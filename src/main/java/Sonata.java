@@ -1,4 +1,4 @@
-public class Sonata extends Car {
+public class Sonata implements Car {
 
     private final int distance;
     private static final int liter = 10;
@@ -7,23 +7,24 @@ public class Sonata extends Car {
         this.distance = distance;
     }
 
+
     @Override
-    double getDistancePerLiter() {
+    public double getDistancePerLiter() {
         return liter;
     }
 
     @Override
-    double getTripDistance() {
+    public double getTripDistance() {
         return distance;
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return "Sonata";
     }
 
     @Override
-    double getChargeQuantity() {
-        return super.getChargeQuantity();
+    public double getChargeQuantity() {
+        return getTripDistance() / getDistancePerLiter();
     }
 }

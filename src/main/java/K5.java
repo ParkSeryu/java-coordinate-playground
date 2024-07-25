@@ -1,4 +1,4 @@
-public class K5 extends Car {
+public class K5 implements Car {
 
     private final int distance;
     private static final int liter = 13;
@@ -8,22 +8,22 @@ public class K5 extends Car {
     }
 
     @Override
-    double getDistancePerLiter() {
+    public double getDistancePerLiter() {
         return liter;
     }
 
     @Override
-    double getTripDistance() {
+    public double getTripDistance() {
         return distance;
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return "K5";
     }
 
     @Override
-    double getChargeQuantity() {
-        return super.getChargeQuantity();
+    public double getChargeQuantity() {
+        return getTripDistance() / getDistancePerLiter();
     }
 }

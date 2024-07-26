@@ -1,6 +1,11 @@
+package rentcompany;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import rentcompany.car.Avante;
+import rentcompany.car.K5;
+import rentcompany.car.Sonata;
 
 public class RentCompanyTest {
     private static final String NEWLINE = System.getProperty("line.separator");
@@ -16,11 +21,11 @@ public class RentCompanyTest {
 
         String report = company.generateReport();
         assertThat(report).isEqualTo(
-                "Sonata : 15리터" + NEWLINE +
-                        "K5 : 20리터" + NEWLINE +
-                        "Sonata : 12리터" + NEWLINE +
-                        "Avante : 20리터" + NEWLINE +
-                        "K5 : 30리터" + NEWLINE
+                "rentcompany.car.Sonata : 15리터" + NEWLINE +
+                        "rentcompany.car.K5 : 20리터" + NEWLINE +
+                        "rentcompany.car.Sonata : 12리터" + NEWLINE +
+                        "rentcompany.car.Avante : 20리터" + NEWLINE +
+                        "rentcompany.car.K5 : 30리터" + NEWLINE
         );
     }
 }

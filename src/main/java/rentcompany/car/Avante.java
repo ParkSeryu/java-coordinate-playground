@@ -1,12 +1,13 @@
-public class Sonata implements Car {
+package rentcompany.car;
+
+public class Avante implements Car {
 
     private final int distance;
-    private static final int liter = 10;
+    private static final int liter = 15;
 
-    public Sonata(int distance) {
+    public Avante(int distance) {
         this.distance = distance;
     }
-
 
     @Override
     public double getDistancePerLiter() {
@@ -20,7 +21,7 @@ public class Sonata implements Car {
 
     @Override
     public String getName() {
-        return "Sonata";
+        return "rentcompany.car.Avante";
     }
 
     @Override

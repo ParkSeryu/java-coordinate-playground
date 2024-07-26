@@ -1,3 +1,5 @@
+package rentcompany.car;
+
 public interface Car {
     /**
      * 리터당 이동 거리. 즉, 연비

@@ -1,11 +1,14 @@
-public class K5 implements Car {
+package rentcompany.car;
+
+public class Sonata implements Car {
 
     private final int distance;
-    private static final int liter = 13;
+    private static final int liter = 10;
 
-    public K5(int distance) {
+    public Sonata(int distance) {
         this.distance = distance;
     }
+
 
     @Override
     public double getDistancePerLiter() {
@@ -19,7 +22,7 @@ public class K5 implements Car {
 
     @Override
     public String getName() {
-        return "K5";
+        return "rentcompany.car.Sonata";
     }
 
     @Override

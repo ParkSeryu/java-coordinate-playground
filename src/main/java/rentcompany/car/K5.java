@@ -1,9 +1,11 @@
-public class Avante implements Car {
+package rentcompany.car;
+
+public class K5 implements Car {
 
     private final int distance;
-    private static final int liter = 15;
+    private static final int liter = 13;
 
-    public Avante(int distance) {
+    public K5(int distance) {
         this.distance = distance;
     }
 
@@ -19,7 +21,7 @@ public class Avante implements Car {
 
     @Override
     public String getName() {
-        return "Avante";
+        return "rentcompany.car.K5";
     }
 
     @Override

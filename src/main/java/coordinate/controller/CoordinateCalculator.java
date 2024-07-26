@@ -10,6 +10,7 @@ public class CoordinateCalculator {
             String inputString = InputView.guide();
             Line line = new Line(new ArrayList<>());
             line.create(inputString);
+            OutputView.printResult(line.calculate());
         }catch(IllegalArgumentException e){
             InputView.reVibe();
             this.run();

@@ -19,4 +19,12 @@ public class Coordinate {
         int y = Integer.parseInt(split[1]);
         return new Coordinate(x, y);
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }

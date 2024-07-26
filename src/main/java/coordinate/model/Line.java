@@ -17,4 +17,15 @@ public class Line {
             coordinates.add(coordinate);
         }
     }
+
+    public double calculate() {
+        Coordinate coordinateX = coordinates.get(0);
+        Coordinate coordinateY = coordinates.get(1);
+        return Math.sqrt(Math.pow((coordinateX.getX() - coordinateY.getX()), 2) + Math.pow(
+                (coordinateX.getY() - coordinateY.getY()), 2));
+    }
+
+    public boolean isSize(int size) {
+        return coordinates.size() == size;
+    }
 }

@@ -1,5 +1,7 @@
 package coordinate.controller;
 
+import coordinate.model.Figure;
+import coordinate.model.FigureFactory;
 import coordinate.model.Line;
 import coordinate.view.InputView;
 import java.util.ArrayList;
@@ -7,14 +9,19 @@ import java.util.ArrayList;
 public class CoordinateCalculator {
     public void run() {
         try {
-            String inputString = InputView.guide();
-            Line line = new Line(new ArrayList<>());
-            line.create(inputString);
-            OutputView.printResult(line.calculate());
-        }catch(IllegalArgumentException e){
+            String[] input = manufactorString(InputView.guide());
+            Figure figure = FigureFactory.matchFigure(input.length);
+            figure.create(input);
+            OutputView.printResult(figure.calculate());
+        } catch (IllegalArgumentException e) {
             InputView.reVibe();
             this.run();
         }
 
+    }
+
+    private String[] manufactorString(String inputString) {
+        String cleanedInput = inputString.replaceAll("[()]", "");
+        return cleanedInput.split("-");
     }
 }

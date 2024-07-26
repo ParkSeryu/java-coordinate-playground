@@ -2,30 +2,30 @@ package coordinate.model;
 
 import java.util.List;
 
-public class Line {
-    private final List<Coordinate> coordinates;
+public class Line implements Figure{
+    private final List<Point> points;
 
-    public Line(List<Coordinate> coordinates) {
-        this.coordinates = coordinates;
+    public Line(List<Point> points) {
+        this.points = points;
     }
 
-    public void create(String input) {
-        String cleanedInput = input.replaceAll("[()]", "");
-        String[] splitStr = cleanedInput.split("-");
-        for (String str : splitStr) {
-            Coordinate coordinate = Coordinate.create(str);
-            coordinates.add(coordinate);
+    @Override
+    public void create(String[] input) {
+        for (String str : input) {
+            Point point = Point.create(str);
+            points.add(point);
         }
     }
 
+    @Override
     public double calculate() {
-        Coordinate coordinateX = coordinates.get(0);
-        Coordinate coordinateY = coordinates.get(1);
-        return Math.sqrt(Math.pow((coordinateX.getX() - coordinateY.getX()), 2) + Math.pow(
-                (coordinateX.getY() - coordinateY.getY()), 2));
+        Point pointX = points.get(0);
+        Point pointY = points.get(1);
+        return Math.sqrt(Math.pow((pointX.getX() - pointY.getX()), 2) + Math.pow(
+                (pointX.getY() - pointY.getY()), 2));
     }
 
     public boolean isSize(int size) {
-        return coordinates.size() == size;
+        return points.size() == size;
     }
 }

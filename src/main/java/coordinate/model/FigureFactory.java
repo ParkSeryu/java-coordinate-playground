@@ -8,6 +8,9 @@ public class FigureFactory {
         if(length == 2){
             return new Line(new ArrayList<>());
         }
+        if(length == 3){
+            return new Triangle(new ArrayList<>());
+        }
         if(length == 4){
             return new Rectangle(new ArrayList<>());
         }

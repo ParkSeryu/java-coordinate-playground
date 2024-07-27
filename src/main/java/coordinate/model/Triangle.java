@@ -1,5 +1,6 @@
 package coordinate.model;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Triangle implements Figure{
@@ -19,6 +20,11 @@ public class Triangle implements Figure{
 
     @Override
     public double calculate() {
-        return 0;
+        double a = new Line(Arrays.asList(points.get(0), points.get(1))).calculate();
+        double b = new Line(Arrays.asList(points.get(0), points.get(2))).calculate();
+        double c = new Line(Arrays.asList(points.get(1), points.get(2))).calculate();
+        double s = (a + b + c) / 2;
+
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     }
 }

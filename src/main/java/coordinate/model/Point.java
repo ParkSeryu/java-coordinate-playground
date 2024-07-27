@@ -1,5 +1,6 @@
 package coordinate.model;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Point {
@@ -34,20 +35,19 @@ public class Point {
         return Math.min(this.x, num);
     }
 
-
     public double returnMaxX(double num){
         return Math.max(this.x, num);
     }
-
 
     public double returnMinY(double num){
         return Math.min(this.y, num);
     }
 
-
     public double returnMaxY(double num){
         return Math.max(this.y, num);
     }
+
+
 
 
 

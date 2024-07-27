@@ -12,7 +12,7 @@ public class CoordinateCalculator {
             String[] input = manufactorString(InputView.guide());
             Figure figure = FigureFactory.matchFigure(input.length);
             figure.create(input);
-            OutputView.printResult(figure.calculate());
+            OutputView.printResult(FigureFactory.figureName, figure.calculate());
         } catch (IllegalArgumentException e) {
             InputView.reVibe();
             this.run();
